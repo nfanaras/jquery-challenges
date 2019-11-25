@@ -13,7 +13,15 @@
 //     document.querySelector("#nameerrormsg").style.display = "none";
 //   }
 //
-//   return false;
+//   if (address.value.length == 0){
+//       document.querySelector("#addrerrormsg").style.display = "block";
+//       validInput = false;
+//   }
+//   else {
+//       document.querySelector("#addrerrormsg").style.display = "none";
+//   }
+//
+//   return validInput;
 //
 // }
 
@@ -36,6 +44,14 @@ $("#ch4form").submit(function(event){
     $("#nameerrormsg").css("display", "none");
   }
 
-  return false;
+  if (address.val().length == 0){
+    $("#adderrormsg").css("display", "block");
+    validInput = false;
+  }
+  else{
+    $("#adderrormsg").css("display", "none");
+  }
+
+  return validInput;
 
 })
