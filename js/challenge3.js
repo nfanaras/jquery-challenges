@@ -14,36 +14,43 @@
 
 $("#ch3form").submit(function(event){
 
-  var fruit = $('input[name="fruit"]');
+  var fruit = $('input[name=fruit]:checked');
   var con = false;
-  var standing = $('input[name="standing"]');
+  var standing = $('input[name=standing]:checked');
   console.log("IN");
+
+  if ((fruit.val()!=undefined) && (standing.val() != undefined)){
+    console.log("checked");
+  }
+  else{
+    event.preventDefault();
+    alert("You must pick a fruit and standing!");
+  }
 
   // for (var i = 0; i < fruit.length; i++){
   //   if(fruit[i].prop('checked')){
   //     return true;
   //   }
-
-  fruit.each(function(){
-
-    if (this.checked){
-      console.log("checked");
-      con = true;
-    }
-  })
-
-  standing.each(function(){
-    if(this.checked){
-      console.log("checked");
-      con = true;
-    }
-  }
-
-  if (con == false){
-    event.preventDefault();
-    alert("You must pick a fruit!");
-
-
-  }
+  //
+  // fruit.each(function(){
+  //
+  //   if (fruit.prop.('checked')){
+  //     console.log("checked");
+  //     con = true;
+  //   }
+  // })
+  //
+  // standing.each(function(){
+  //   if(this.checked){
+  //     console.log("checked");
+  //     con = true;
+  //   }
+  // }
+  //
+  // if (con == false){
+  //
+  //
+  //
+  // }
 
 })
