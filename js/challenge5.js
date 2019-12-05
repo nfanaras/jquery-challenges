@@ -39,8 +39,8 @@ var msg = "Hover over an image below.";
 
 	imgs.focus(function(){
 		console.log("focus")
-		$("#image").css("backgroundImage", "url('"+imgs.attr("src")+"')")
-		$("#image").html(imgs.attr("alt"));
+		$("#image").css("backgroundImage", "url('"+$(this).attr("src")+"')")
+		$("#image").html($(this).attr("alt"));
 	})
 
 	imgs.mouseleave(function(){
